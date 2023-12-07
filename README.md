@@ -1,29 +1,36 @@
 # kasperdb.js
 
-The database is easy to use, just as simple as possible
+`kasperdb` is a simple and easy-to-use database library for Node.js.
 
-# Mini Docs
+## Installation
 
-## Creating an Instance of a Class
+```bash
+npm install kasperdb
+```
+## Usage
 
 ```javascript
 const { DB } = require("kasperdb");
-const db = new DB({filename: "database/example", extension: ".db"});
+const db = new DB({ filename: "database/example", extension: ".db" });
 ```
+## Functions
+### Save Data to File
+```javascript
+db.saveData("money", { username: "example username", count: 0 });
+```
+### Get Data from File 
 
-## Functions of class
-### save data to file
+1. Get full data from file:
 ```javascript
-db.saveData("money", {username: "example username", count: 0});
-```
-### get data from file
-1 way:
-```javascript
-const data = db.getData(); // get full data from file
+const data = db.getData();
 console.log(data.money.count);
 ```
-2 way:
+
+2. Get data by key:
 ```javascript
-const data = db.getData("money"); // get data from kay
+const data = db.getData("money");
 console.log(data.count);
 ```
+## Dependencies
+- [fs](https://nodejs.org/api/fs.html): File system module.
+- [msgpack-lite](https://www.npmjs.com/package/msgpack-lite): MessagePack implementation for Node.js.
