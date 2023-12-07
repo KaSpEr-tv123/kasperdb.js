@@ -1,4 +1,4 @@
-# kasperdb.js
+# kasperdb
 
 `kasperdb` is a simple and easy-to-use database library for Node.js.
 
